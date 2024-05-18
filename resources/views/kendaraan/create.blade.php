@@ -3,69 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Kendaraan</title>
+    <title>Data Kendaraan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background: white">
-
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div>
-                <h3 class="text-center my-4">Create Kendaraan</h3>
-                <hr>
-            </div>
-            <div class="card border-0 shadow-sm rounded">
-                <div class="card-body">
-                    <form action="{{ route('kendaraan.index') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="no_pol" class="form-label">No Polisi</label>
-                            <input type="text" class="form-control" id="no_pol" name="no_pol" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="no_mesin" class="form-label">No Mesin</label>
-                            <input type="text" class="form-control" id="no_mesin" name="no_mesin" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="jnis_mobil" class="form-label">Tipe Mobil</label>
-                            <select class="form-select" id="jnis_mobil" name="jnis_mobil" required>
-                                <option value="" selected disabled>Pilih Tipe Mobil</option>
-                                <option value="mpv">MPV</option>
-                                <option value="city">City</option>
-                                <option value="suv">SUV</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nama_mobil" class="form-label">Nama Mobil</label>
-                            <input type="text" class="form-control" id="nama_mobil" name="nama_mobil" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="merk" class="form-label">Merk</label>
-                           <select class="form-select" id="merk" name="merk" required>
-                                <option value="" selected disabled>Pilih Merek Mobil</option>
-                                <option value="honda">Honda</option>
-                                <option value="toyota">Toyota</option>
-                                <option value="daihatsu">Daihatsu</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="kapasitas" class="form-label">Kapasitas</label>
-                            <input type="number" class="form-control" id="kapasitas" name="kapasitas" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="tarif" class="form-label">Tarif</label>
-                            <input type="number" class="form-control" id="tarif" name="tarif" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ route('kendaraan.index') }}" class="btn btn-secondary">Kembali</a>
-                    </form>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <h3 class="text-center my-4">Data Kendaraan</h3>
+                    <hr>
                 </div>
-            </div>         
+                <div class="card border-0 shadow-sm rounded">
+                    <div class="card-body">
+                    <form action="{{ route('kendaraan.store') }}" method="POST" >
+                          @csrf
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">No Mesin</label>
+                              <input type="number" name="no_mesin" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                              @error('no_mesin')
+                              <div class="alert alert-danger mt-2">
+                                  {{ $message }}
+                              </div>
+                              @enderror
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">JENIS</label>
+                                <select class="form-control" name="jnis_mobil" id="exampleFormControlSelect1">
+                                  <option value="mpv">mpv</option>
+                                  <option value="city">city</option>
+                                  <option value="suv">suv</option>
+                                 </select>
+                                 @error('level')
+                                 <div class="alert alert-danger mt-2">
+                                     {{ $message }}
+                                 </div>
+                                 @enderror
+                              </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail">Nama Mobil</label>
+                          <input type="text" name="nama_mobil" class="form-control" id="exampleInputEmail" >
+                          @error('nama_mobil')
+                          <div class="alert alert-danger mt-2">
+                              {{ $message }}
+                          </div>
+                          @enderror
+                        </div>
+                        <label for="exampleFormControlSelect1">MERK</label>
+                        <select class="form-control" name="merk" id="exampleFormControlSelect1">
+                          <option value="honda">honda</option>
+                          <option value="toyota">toyota</option>
+                          <option value="daihatsu">daihatsu</option>
+                         </select>
+                         @error('level')
+                         <div class="alert alert-danger mt-2">
+                             {{ $message }}
+                         </div>
+                         @enderror
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail">Kapasitas</label>
+                        <input type="text" name="kapasitas" class="form-control" id="exampleInputEmail" >
+                        @error('kapasitas')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                      </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail">Tarif</label>
+                          <input type="number" name="tarif" class="form-control" id="exampleInputEmail" >
+                          @error('tarif')
+                          <div class="alert alert-danger mt-2">
+                              {{ $message }}
+                          </div>
+                          @enderror
+                        </div>
+
+                              <br/>
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                    </form>
+           
+                        
+                        {{-- {{ $user->links() }} --}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
