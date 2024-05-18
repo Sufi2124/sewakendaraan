@@ -17,7 +17,7 @@
             </div>
             <div class="card border-0 shadow-sm rounded">
                 <div class="card-body">
-                    <form action="{{ route('kendaraan.index') }}" method="POST">
+                    <form action="{{ route('kendaraan.update') }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
@@ -58,20 +58,7 @@
                 </div>
             </div>
             
-            <div class="mt-5">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">No Polisi</th>
-                            <th scope="col">No Mesin</th>
-                            <th scope="col">Tipe Mobil</th>
-                            <th scope="col">Nama Mobil</th>
-                            <th scope="col">Merk</th>
-                            <th scope="col">Kapasitas</th>
-                            <th scope="col">Tarif</th>
-                            <th scope="col" style="width: 20%">Aksi</th>
-                        </tr>
-                    </thead>
+           
                     <tbody>
                         @forelse ($kendaraan as $index => $data)
                             <tr>

@@ -45,8 +45,10 @@
                                         <td>{{ $data->tarif }}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="POST">
-                                                <a href="#" class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="{{ route('kendaraan.edit') }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                <a href="{{ route('kendaraan.index', $kendaraan->id) }}" class="btn btn-sm btn-dark">SHOW</a>
+                                                <a href="{{ route('kendaraan.edit', $kendaraan->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                @csrf
+                                                @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
                                             </form>
                                         </td>
