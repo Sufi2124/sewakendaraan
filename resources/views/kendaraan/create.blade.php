@@ -19,9 +19,18 @@
                     <form action="{{ route('kendaraan.store') }}" method="POST" >
                           @csrf
                             <div class="form-group">
-                              <label for="exampleInputEmail1">No Mesin</label>
-                              <input type="number" name="no_mesin" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                              <label for="exampleInputNo_pol">No Polisi</label>
+                              <input type="number" name="no_pol" class="form-control" id="exampleInputNo_pol" >
+                              @error('no_pol')
+                              <div class="alert alert-danger mt-2">
+                                  {{ $message }}
+                              </div>
+                              @enderror
+                            </div>
+
+                            <div class="form-group">
+                              <label for="exampleInputNo_mesin">No Mesin</label>
+                              <input type="number" name="no_mesin" class="form-control" id="exampleInputNo_mesin" >
                               @error('no_mesin')
                               <div class="alert alert-danger mt-2">
                                   {{ $message }}
@@ -42,47 +51,53 @@
                                  </div>
                                  @enderror
                               </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail">Nama Mobil</label>
-                          <input type="text" name="nama_mobil" class="form-control" id="exampleInputEmail" >
-                          @error('nama_mobil')
-                          <div class="alert alert-danger mt-2">
-                              {{ $message }}
-                          </div>
-                          @enderror
-                        </div>
-                        <label for="exampleFormControlSelect1">MERK</label>
-                        <select class="form-control" name="merk" id="exampleFormControlSelect1">
-                          <option value="honda">honda</option>
-                          <option value="toyota">toyota</option>
-                          <option value="daihatsu">daihatsu</option>
-                         </select>
-                         @error('level')
-                         <div class="alert alert-danger mt-2">
-                             {{ $message }}
-                         </div>
-                         @enderror
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail">Kapasitas</label>
-                        <input type="text" name="kapasitas" class="form-control" id="exampleInputEmail" >
-                        @error('kapasitas')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
-                        @enderror
-                      </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail">Tarif</label>
-                          <input type="number" name="tarif" class="form-control" id="exampleInputEmail" >
-                          @error('tarif')
-                          <div class="alert alert-danger mt-2">
-                              {{ $message }}
-                          </div>
-                          @enderror
-                        </div>
 
+                              <div class="form-group">
+                                <label for="exampleInputNamamobil">Nama Mobil</label>
+                                <input type="text" name="nama_mobil" class="form-control" id="exampleInputNamamobil" >
+                                @error('nama_mobil')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                               </div>
+
+                              <div class="form-group">  
+                                <label for="exampleFormControlSelect1">MERK</label>
+                                <select class="form-control" name="merk" id="exampleFormControlSelect1">
+                                  <option value="honda">honda</option>
+                                  <option value="toyota">toyota</option>
+                                  <option value="daihatsu">daihatsu</option>
+                                </select>
+                                 @error('level')
+                                <div class="alert alert-danger mt-2">
+                                  {{ $message }}
+                                </div>
+                                  @enderror
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputKapasitas">Kapasitas</label>
+                                <input type="text" name="kapasitas" class="form-control" id="exampleInputKapasitas" >
+                                @error('kapasitas')
+                                <div class="alert alert-danger mt-2">
+                                  {{ $message }}
+                                </div>
+                                 @enderror
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputTarif">Tarif</label>
+                                <input type="number" name="tarif" class="form-control" id="exampleInputTarif" >
+                                  @error('tarif')
+                                <div class="alert alert-danger mt-2">
+                                  {{ $message }}
+                                </div>
+                                @enderror
+                              </div>
+                    </div>
+                      
+                      
                               <br/>
                               <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Submit</button>

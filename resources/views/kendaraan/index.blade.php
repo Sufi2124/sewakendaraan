@@ -46,7 +46,7 @@
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="#" method="POST">
                                                 <a href="#" class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="#" class="btn btn-sm btn-primary">EDIT</a>
+                                                <a href="{{ route('kendaraan.edit') }}" class="btn btn-sm btn-primary">EDIT</a>
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
                                             </form>
                                         </td>
