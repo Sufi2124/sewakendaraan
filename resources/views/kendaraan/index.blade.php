@@ -44,7 +44,7 @@
                                         <td>{{ $data->kapasitas }}</td>
                                         <td>{{ $data->tarif }}</td>
                                         <td class="text-center">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="#" method="POST">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="POST">
                                                 <a href="#" class="btn btn-sm btn-dark">SHOW</a>
                                                 <a href="{{ route('kendaraan.edit') }}" class="btn btn-sm btn-primary">EDIT</a>
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
