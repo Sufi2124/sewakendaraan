@@ -23,28 +23,27 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">No</th>
                                     <th scope="col">Nama Penyewa</th>
                                     <th scope="col">Alamat</th>
                                     <th scope="col">Nomor HP</th>
-                                    <th scope="col" style="width: 20%">ACTIONS</th>
+                                    <th scope="col">ACTIONS</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($penyewa as $index => $data)
                                     <tr>
-                                        <td class="text-center">{{ ++$index }}</td>
+                                        
                                         <td>{{ $data->nama_penyewa }}</td>
                                         <td>{{ $data->alamat }}</td>
                                         <td>{{ $data->no_hp }}</td>
                                         <td class="text-center">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="#" method="POST">
-                                                <a href="#" class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="#" class="btn btn-sm btn-primary">EDIT</a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('penyewa.destroy', $data->id)}}" method="POST">
+                                                <a href="{{route('penyewa.show', $data->id)}}" class="btn btn-sm btn-dark">SHOW</a>
+                                                <a href="{{route('penyewa.edit', $data->id)}}" class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                                            </form>
+                                        </form>
                                         </td>
                                     </tr>
                                 @empty
@@ -64,5 +63,7 @@
             </div>
         </div>
     </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

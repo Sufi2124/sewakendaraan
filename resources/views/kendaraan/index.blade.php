@@ -34,8 +34,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($kendaraan as $index => $data)
-                                    <tr>
+                            @foreach($kendaraan as $index => $data)
+                                <tr>
                                         <td>{{ $data->no_pol }}</td>
                                         <td>{{ $data->no_mesin }}</td>
                                         <td>{{ $data->jnis_mobil }}</td>
@@ -44,24 +44,17 @@
                                         <td>{{ $data->kapasitas }}</td>
                                         <td>{{ $data->tarif }}</td>
                                         <td class="text-center">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="POST">
-                                                <a href="{{ route('kendaraan.index', $kendaraan->id) }}" class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="{{ route('kendaraan.edit', $kendaraan->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="#" method="POST">
+                                                <a href="#" class="btn btn-sm btn-dark">SHOW</a>
+                                                <a href="#" class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
                                             </form>
                                         </td>
                                     </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="8" class="text-center">
-                                            <div class="alert alert-danger">
-                                                Data Kendaraan Belum Ada.
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforelse
+                            @endforeach
+                                
                             </tbody>
                         </table>
                         {{-- {{ $kendaraan->links() }} --}}

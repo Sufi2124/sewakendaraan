@@ -25,8 +25,8 @@ class PenyewaController extends Controller
        
         //validate form
         $request->validate([
-            'nama_penyewa'    => 'required|min:5',
-            'alamat'      => 'required|min:5',
+            'nama_penyewa'    => 'required|min:3',
+            'alamat'      => 'required|min:3',
             'no_hp'       => 'required|min:5',
         ]);
 
@@ -37,6 +37,37 @@ class PenyewaController extends Controller
         ]);
         //redirect to index
         return redirect()->route('penyewa.index')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+
+    public function show( string $id): View
+    {
+        $penyewa = Penyewa::findOrFail($id);
+
+        return view('penyewa.show', compact('penyewa'));
+        
+    }
+    public function edit( string $id): View
+    {
+        $penyewa = Penyewa::findOrfail($id);
+
+        return view('penyewa.edit', compact('penyewa'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama_penyewa'    => 'required|min:3',
+            'alamat'      => 'required|min:3',
+            'no_hp'       => 'required|min:5',
+        ]); 
+
+        $penyewa = Penyewa::findOrFail($id);
+        $penyewa->update([
+            'nama_penyewa'=> $request->nama_penyewa,
+            'alamat'      => $request->alamat,
+            'no_hp'       => $request->no_hp,
+            ]);
+            return redirect()->route('penyewa.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
     
     public function destroy($id): RedirectResponse
