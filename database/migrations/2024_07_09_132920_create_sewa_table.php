@@ -12,21 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sewa', function (Blueprint $table) {
-            $table->id();    
-            $table->unsignedBigInteger('no_pol');
-            $table->foreign('no_pol')->references('id')->on('kendaraan');      
+            $table->id('id_sewa'); // Primary Key
+            $table->string('no_pol', 10); // Foreign Key
             $table->date('tgl_sewa');
             $table->date('tgl_selesai');
-            $table->string('tlp_tujuan');
+            $table->string('tlp_tujuan', 15);
             $table->text('alamat_tujuan');
             $table->integer('biaya_sewa');
-            $table->string('kota', 50)->default('pontianak');
-            $table->unsignedBigInteger('id_penyewa')->default(0);
-            $table->foreign('id_penyewa')->references('id')->on('penyewa');   
+            $table->string('kota', 50)->default('PONTIANAK');
+            $table->unsignedBigInteger('id_penyewa')->default(1); // Foreign Key with a default value
             $table->integer('jlh_penumpang');
-            $table->unsignedBigInteger('id_kwitansi'); 
-            $table->foreign('id_kwitansi')->references('id')->on('kwitansi');
+            $table->unsignedBigInteger('id_kwitansi'); // Foreign Key
+
             $table->timestamps();
+
+            // Foreign Key Constraints
+            $table->foreign('no_pol')->references('no_pol')->on('kendaraan');
+            $table->foreign('id_penyewa')->references('id')->on('penyewa');
+            $table->foreign('id_kwitansi')->references('id')->on('kwitansi');
         });
     }
 

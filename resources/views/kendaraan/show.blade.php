@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <div class="card-body">
                             <h3>{{ $kendaraan->no_pol }}</h3>
-                            <p>{{ $kendaraan->no_mesin }}</p>
+                            <h3>{{ $kendaraan->no_mesin }}</h3>
                             <p>{{ $kendaraan->jnis_mobil }}</p>
                             <p>{{ $kendaraan->nama_mobil }}</p>
                             <p>{{ $kendaraan->merk }}</p>

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Kwitansi extends Model
 {
     use HasFactory;
+    protected $table = 'kwitansi';
+
+    protected $fillable = [
+        'tgl_kwitansi',
+    ];
 }

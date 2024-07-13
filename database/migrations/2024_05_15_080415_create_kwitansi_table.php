@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kwitansi', function (Blueprint $table) {
-            $table->bigInteger('id_kwitansi')->primary; // Primary key dengan auto-increment
+            $table->id();
             $table->date('tgl_kwitansi'); // Kolom tgl_kwitansi dengan tipe date
             $table->timestamps();
         });

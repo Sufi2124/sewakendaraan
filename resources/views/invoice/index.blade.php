@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kendaraan</title>
+    <title>Invoice Kendaraan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background: white">
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <h3 class="text-center my-4">Data Kendaraan</h3>
+                    <h3 class="text-center my-4">Invoice Kendaraan</h3>
                     <hr>
                 </div>
                 <div class="card border-0 shadow-sm rounded">
@@ -23,27 +23,18 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th scope="col">Tanggal Kwitansi</th>
+                                    <th scope="col">Nama Penyewa</th>
                                     <th scope="col">No Polisi</th>
-                                    <th scope="col">No Mesin</th>
-                                    <th scope="col">Tipe Mobil</th>
-                                    <th scope="col">Nama Mobil</th>
-                                    <th scope="col">Merk</th>
-                                    <th scope="col">Kapasitas</th>
-                                    <th scope="col">Tarif</th>
                                     <th scope="col" style="width: 20%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @forelse ($kendaraan as $index => $data)
-                                    <tr>
-                                        
+                            @forelse ($invoices as $index => $data)
+                                    <tr>            
+                                        <td>{{ $data->tgl_kwitansi }}</td>
+                                        <td>{{ $data->nama_penyewa }}</td>
                                         <td>{{ $data->no_pol }}</td>
-                                        <td>{{ $data->no_mesin }}</td>
-                                        <td>{{ $data->jnis_mobil }}</td>
-                                        <td>{{ $data->nama_mobil }}</td>
-                                        <td>{{ $data->merk }}</td>
-                                        <td>{{ $data->kapasitas }}</td>
-                                        <td>{{ $data->tarif }}</td>
                                         <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
                                                 <a href="" class="btn btn-sm btn-dark">SHOW</a>
@@ -58,7 +49,7 @@
                                     <tr>
                                         <td colspan="5" class="text-center">
                                             <div class="alert alert-danger">
-                                                Data Penyewa Belum Ada.
+                                                Data Invoice Belum Ada.
                                             </div>
                                         </td>
                                     </tr>

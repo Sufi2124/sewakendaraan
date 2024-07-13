@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kendaraan;
-
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
 class KendaraanController extends Controller
@@ -47,6 +46,13 @@ class KendaraanController extends Controller
         return redirect()->route('kendaraan.index')->with('succes', 'Data kendaraan berhasil disimpan');
     }
 
+    public function show($id)
+    {
+        return view('kendaraan.show')->with([
+            'kendaraan' => Kendaraan::find($id)
+        ]);
+    }
+
     public function edit($id)
     {
         return view('kendaraan.edit')->with([
@@ -54,13 +60,6 @@ class KendaraanController extends Controller
         ]);
     }
 
-    public function show( string $id): View
-    {
-        $kendaraan = Kendaraan::findOrFail($id);
-
-        return view('kendaraan.show', compact('kendaraan'));
-        
-    }
 
     public function update(Request $request, $id): RedirectResponse
     {

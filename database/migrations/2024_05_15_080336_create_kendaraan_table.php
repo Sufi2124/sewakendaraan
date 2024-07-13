@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kendaraan', function (Blueprint $table) {
-            $table->string('no_pol', 10); // Primary key 1: nomor polisi
-            $table->string('no_mesin', 20); // Primary key 2: nomor mesin
+            $table->string('no_pol', 10)->primary(); // Primary key 1: nomor polisi
+            $table->string('no_mesin', 20)->unique(); // Primary key 2: nomor mesin
             $table->enum('jnis_mobil', ['mpv', 'city', 'suv']); // Tipe mobil: mpv, city, atau suv
             $table->string('nama_mobil', 40); // Nama mobil
             $table->enum('merk', ['honda', 'toyota', 'daihatsu']); // Merk mobil: honda, toyota, atau daihatsu
@@ -21,8 +21,7 @@ return new class extends Migration
             $table->integer('tarif'); // Tarif sewa per hari
             $table->timestamps(); // Kolom timestamps (created_at dan updated_at)
 
-            // Set primary key
-            $table->primary(['no_pol', 'no_mesin']);
+            
         });
     }
 

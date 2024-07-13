@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <form action="{{ route('kendaraan.update', $kendaraan->id) }}" method="POST" >
                             @csrf
-                            @method('PUT')
+                            @method('patch')
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">No polisi</label>
