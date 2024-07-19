@@ -1,6 +1,13 @@
-![Screenshot (122)](https://github.com/Sufi2124/sewakendaraan/assets/164913699/60117d13-c093-4ead-ac00-ba4b23bd08f9)
+![Screenshot (210)](https://github.com/user-attachments/assets/c604f86c-84cd-46e5-a3a1-7478be9a869f)
+![Screenshot (211)](https://github.com/user-attachments/assets/9d25ff8e-3c83-426d-9948-5c13fbfc4ae3)
+![Screenshot (212)](https://github.com/user-attachments/assets/aee64d3d-5086-4429-b0af-61d973312664)
+![Screenshot (213)](https://github.com/user-attachments/assets/2f2a266e-9833-4614-abb1-859f746206b0)
+![Screenshot (214)](https://github.com/user-attachments/assets/57a26275-48e7-47df-9af5-e478d1283be9)
+![Screenshot (215)](https://github.com/user-attachments/assets/6af09ce6-3329-4086-94db-1e62e3566939)
+![Screenshot (216)](https://github.com/user-attachments/assets/8779d722-829b-4c8d-88ff-f6a83245a439)
+![Screenshot (217)](https://github.com/user-attachments/assets/54438cfa-f952-4955-bd13-28efc5ceb0a5)
+![Screenshot (218)](https://github.com/user-attachments/assets/6a9afab2-ad6a-445c-8b7b-0b6976befda0)
 
-![Screenshot (124)](https://github.com/Sufi2124/sewakendaraan/assets/164913699/c7cb5ea9-e4f5-454c-a481-7b390061d2d3)
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
