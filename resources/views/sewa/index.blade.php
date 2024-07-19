@@ -1,15 +1,15 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Sewa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body style="background: white">
+@extends('template.app')
+@section('content')
+<div class="section-header">
+    <h1>Halaman Sewa</h1>
+    <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="#">Layout</a></div>
+        <div class="breadcrumb-item">Default Layout</div>
+    </div>
+</div>
 
-    <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
                 <div>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('kendaraan.create') }}" class="btn btn-md btn-info mb-3">TAMBAH</a>
+                        <a href="{{ route('sewa.create') }}" class="btn btn-md btn-info mb-3">TAMBAH</a>
                         <a href="{{ route('penyewa.index') }}" class="btn btn-md btn-secondary mb-3">PENYEWA</a> <!-- New button for Penyewa -->
                         <table class="table table-bordered">
                             <thead>
@@ -48,7 +48,7 @@
                                         <td>{{ $data->jlh_penumpang }}</td>
                                         <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
-                                                <a href="" class="btn btn-sm btn-dark">SHOW</a>
+                                                <a href=" " class="btn btn-sm btn-dark">SHOW</a>
                                                 <a href="" class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
@@ -73,6 +73,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+@endsection

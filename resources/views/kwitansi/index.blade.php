@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Kwitansi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .container {
-            padding-top: 50px;
-        }
-        .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        }
-        .card-header {
-            background-color: #007bff;
-            color: white;
-            border-radius: 15px 15px 0 0;
-        }
-        .card-body {
-            padding: 20px;
-        }
-        .btn-custom {
-            border-radius: 10px;
-            font-weight: bold;
-            border: 2px solid #007bff;
-            background-color: transparent;
-            color: #007bff;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .btn-custom:hover {
-            background-color: #007bff;
-            color: white;
-        }
-        .table th, .table td {
-            vertical-align: middle;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
+@extends('template.app')
+@section('content')
+<div class="section-header">
+    <h1>Halaman Kwitansi</h1>
+    <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="#">Layout</a></div>
+        <div class="breadcrumb-item">Default Layout</div>
+    </div>
+</div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -92,6 +55,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+@endsection

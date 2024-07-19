@@ -1,15 +1,13 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kendaraan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body style="background: white">
-
-    <div class="container mt-5">
+@extends('template.app')
+@section('content')
+<div class="section-header">
+    <h1>Halaman Kendaraan</h1>
+    <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="#">Layout</a></div>
+        <div class="breadcrumb-item">Default Layout</div>
+    </div>
+</div>
         <div class="row">
             <div class="col-md-12">
                 <div>
@@ -71,6 +69,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+@endsection

@@ -61,6 +61,12 @@ class SewaController extends Controller
         return view('sewa.show', compact('sewa'));
     }
 
+    public function edit( string $id): View
+    {
+        $sewa = Sewa::findOrfail($id);
+
+        return view('sewa.edit', compact('sewa'));
+    }
     /**
      * Update the specified resource in storage.
      */
